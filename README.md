@@ -1,16 +1,34 @@
-# star_wars
+# Star Wars Query App
 
-A new Flutter project.
+This is a Flutter app that allows users to query Star Wars information from a GraphQL API. This is a
+pet project
+allowing the user to learn the basic features of Flutter. Lists, bottom bar, navigation,
+internationalization, GraphQL and more.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Search for characters, planets, and other Star Wars data using keywords or predefined options
+- View detailed information about a selected character or planet
 
-A few resources to get you started if this is your first Flutter project:
+## Technologies
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter: A UI toolkit for building natively compiled applications for mobile, web, and desktop
+  from a single codebase.
+- GraphQL: A query language for APIs that provides a more efficient, powerful and flexible
+  alternative to REST.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Getting started
+
+1. Clone this repository
+2. Open the project in your preferred IDE
+3. Run `flutter pub get` to install dependencies
+4. Run the app on an emulator or physical device using the `flutter run` command
+
+## Contributing
+
+Contributions are welcome! If you find a bug or want to add a new feature, please open an issue or
+submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
