@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../widget/film_list.dart';
 import '../widget/people_list.dart';
 import '../widget/planet_list.dart';
+import '../widget/vehicle_list.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -19,7 +20,9 @@ class MainScreenState extends State<MainScreen> {
     PlanetList(
       title: 'Star Wars planets',
     ),
-/*    VehiclesTab(),*/
+    VehicleList(
+      title: 'Star Wars vehicles',
+    ),
 /*    StarshipsTab(),
     SpeciesTab(),*/
   ];
