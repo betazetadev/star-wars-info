@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/widget/starship_list.dart';
 import '../widget/film_list.dart';
 import '../widget/people_list.dart';
 import '../widget/planet_list.dart';
@@ -23,6 +24,7 @@ class MainScreenState extends State<MainScreen> {
     VehicleList(
       title: 'Star Wars vehicles',
     ),
+    StarshipList(title: 'Star Wars starships')
 /*    StarshipsTab(),
     SpeciesTab(),*/
   ];
