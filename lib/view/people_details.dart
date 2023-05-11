@@ -30,11 +30,11 @@ class PeopleDetailsDialog extends StatelessWidget {
                   detailsRowWidget(context, 'Height', person.height.toString()),
                   detailsRowWidget(context, 'Birth Year', person.birthYear),
                   detailsRowWidget(context, 'Eye Color', person.eyeColor),
-                  const SizedBox(height: 16.0),
                 ],
               ),
             ),
           ),
+          const SizedBox(height: 16.0),
         ],
       ),
     );

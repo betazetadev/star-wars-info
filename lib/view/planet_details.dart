@@ -40,6 +40,7 @@ class PlanetDetailsDialog extends StatelessWidget {
                 return Chip(label: Text(terrain));
               }).toList(),
             ),
+            const SizedBox(height: 16),
           ],
         ),
       ),
