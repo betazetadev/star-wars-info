@@ -16,7 +16,7 @@ class Person {
   factory Person.fromMap(Map<String, dynamic> map) {
     return Person(
       gender: map['gender'],
-      height: map['height'],
+      height: map['height']  ?? 0,
       name: map['name'],
       birthYear: map['birthYear'],
       eyeColor: map['eyeColor'],
