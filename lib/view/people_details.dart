@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/person.dart';
+import '../widget/details_list_row.dart';
 
 class PeopleDetailsDialog extends StatelessWidget {
   final Person person;
@@ -10,14 +11,25 @@ class PeopleDetailsDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(4),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
             children: [
+              Expanded(
+                child: Text(
+                  person.name,
+                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
               IconButton(
                 onPressed: () => Navigator.of(context).pop(),
                 icon: const Icon(Icons.close),
@@ -25,38 +37,22 @@ class PeopleDetailsDialog extends StatelessWidget {
             ],
           ),
           SingleChildScrollView(
-            padding:
-            const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  person.name,
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 16.0),
-                Text(
-                  'Gender: ${person.gender}',
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
-                Text(
-                  'Height: ${person.height}',
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
-                Text(
-                  'Birth Year: ${person.birthYear}',
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
-                Text(
-                  'Eye Color: ${person.eyeColor}',
-                  style: Theme.of(context).textTheme.subtitle2,
-                ),
-                const SizedBox(height: 16.0),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  detailsRowWidget(context, 'Gender', person.gender, null),
+                  detailsRowWidget(
+                      context, 'Height', person.height.toString(), null),
+                  detailsRowWidget(
+                      context, 'Birth Year', person.birthYear, null),
+                  detailsRowWidget(context, 'Eye Color', person.eyeColor, null),
+                  const SizedBox(height: 16.0),
+                ],
+              ),
             ),
           ),
         ],
