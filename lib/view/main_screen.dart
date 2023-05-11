@@ -3,6 +3,7 @@ import 'package:star_wars/widget/starship_list.dart';
 import '../widget/film_list.dart';
 import '../widget/people_list.dart';
 import '../widget/planet_list.dart';
+import '../widget/specie_list.dart';
 import '../widget/vehicle_list.dart';
 
 class MainScreen extends StatefulWidget {
@@ -24,9 +25,8 @@ class MainScreenState extends State<MainScreen> {
     VehicleList(
       title: 'Star Wars vehicles',
     ),
-    StarshipList(title: 'Star Wars starships')
-/*    StarshipsTab(),
-    SpeciesTab(),*/
+    StarshipList(title: 'Star Wars starships'),
+    SpecieList(title: 'Star Wars species'),
   ];
 
   int _currentIndex = 0;
