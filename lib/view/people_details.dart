@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../model/person.dart';
-import '../widget/details_list_row.dart';
+import '../widget/details_row_widget.dart';
 
 class PeopleDetailsDialog extends StatelessWidget {
   final Person person;
