@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/widget/details_header_widget.dart';
 import '../model/film.dart';
 
 class FilmDetailsDialog extends StatelessWidget {
@@ -15,15 +16,7 @@ class FilmDetailsDialog extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              IconButton(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(Icons.close),
-              ),
-            ],
-          ),
+          detailsHeaderWidget(context, film.title),
           SingleChildScrollView(
             padding:
                 const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
@@ -31,13 +24,6 @@ class FilmDetailsDialog extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text(
-                  film.title,
-                  style: Theme.of(context).textTheme.headline5!.copyWith(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
                 Row(
                   children: [
                     Text(

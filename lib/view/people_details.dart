@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/widget/details_header_widget.dart';
 import '../model/person.dart';
 import '../widget/details_row_widget.dart';
 
@@ -16,26 +17,7 @@ class PeopleDetailsDialog extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Expanded(
-                child: Text(
-                  person.name,
-                  style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              IconButton(
-                onPressed: () => Navigator.of(context).pop(),
-                icon: const Icon(Icons.close),
-              ),
-            ],
-          ),
+          detailsHeaderWidget(context, person.name),
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -44,12 +26,10 @@ class PeopleDetailsDialog extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  detailsRowWidget(context, 'Gender', person.gender, null),
-                  detailsRowWidget(
-                      context, 'Height', person.height.toString(), null),
-                  detailsRowWidget(
-                      context, 'Birth Year', person.birthYear, null),
-                  detailsRowWidget(context, 'Eye Color', person.eyeColor, null),
+                  detailsRowWidget(context, 'Gender', person.gender),
+                  detailsRowWidget(context, 'Height', person.height.toString()),
+                  detailsRowWidget(context, 'Birth Year', person.birthYear),
+                  detailsRowWidget(context, 'Eye Color', person.eyeColor),
                   const SizedBox(height: 16.0),
                 ],
               ),
