@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/widget/details_row_widget.dart';
 import '../model/specie.dart';
-import '../model/vehicle.dart';
+import '../widget/details_header_widget.dart';
+import '../widget/details_subheader_widget.dart';
 
 class SpecieDetailsDialog extends StatelessWidget {
   final Specie specie;
@@ -10,30 +12,26 @@ class SpecieDetailsDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          ListTile(
-            title: Text(specie.name),
-            subtitle: Text(specie.classification),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Average Height: ${specie.averageHeight}"),
-                Text("Average Lifespan: ${specie.averageLifespan} years"),
-                Text("Designation: ${specie.designation}"),
-                Text("Language: ${specie.language}"),
-                const SizedBox(height: 16),
-                Text("Eye Colors: ${specie.eyeColors?.join(", ")}"),
-                Text("Hair Colors: ${specie.hairColors?.join(", ")}"),
-                Text("Skin Colors: ${specie.skinColors?.join(", ")}"),
-              ],
-            ),
-          ),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            detailsHeaderWidget(context, specie.name),
+            detailsSubheaderWidget(context, specie.classification),
+            detailsRowWidget(
+                context, "Average Height", specie.averageHeight.toString()),
+            detailsRowWidget(
+                context, "Average Lifespan", "${specie.averageLifespan} years"),
+            detailsRowWidget(context, "Designation", specie.designation),
+            detailsRowWidget(context, "Language", specie.language),
+            detailsRowWidget(context, "Eye Colors", specie.eyeColors?.join(", ") ?? "N/A"),
+            detailsRowWidget(context, "Hair Colors", specie.hairColors?.join(", ") ?? "N/A"),
+            detailsRowWidget(context, "Skin Colors", specie.skinColors?.join(", ") ?? "N/A"),
+            const SizedBox(height: 16),
+          ],
+        ),
       ),
     );
   }
