@@ -27,7 +27,7 @@ class VehicleDetailsDialog extends StatelessWidget {
             detailsRowWidget(context, "Crew", vehicle.crew),
             detailsRowWidget(context, "Passengers", vehicle.passengers),
             detailsRowWidget(context, "Max atmosphering speed", vehicle.maxAtmospheringSpeed.toString()),
-            const Text("Manufacturers:"),
+            const Text("Manufacturers"),
             Wrap(
               spacing: 8,
               children: vehicle.manufacturers.map((manufacturer) {
