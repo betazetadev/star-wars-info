@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/widget/details_header_widget.dart';
+import 'package:star_wars/widget/details_row_widget.dart';
+import 'package:star_wars/widget/details_subheader_widget.dart';
 import '../model/film.dart';
 
 class FilmDetailsDialog extends StatelessWidget {
@@ -13,54 +16,31 @@ class FilmDetailsDialog extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          detailsHeaderWidget(context, film.title),
-          SingleChildScrollView(
-            padding:
-                const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      'Episode ${film.episodeID}',
-                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
-                            color: Theme.of(context).accentColor,
-                          ),
-                    ),
-                    const SizedBox(width: 8.0),
-                    Text(
-                      '(${film.releaseDate.substring(0, 4)})',
-                      style: Theme.of(context).textTheme.subtitle2,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 16.0),
-                Text(
-                  film.openingCrawl.replaceAll(RegExp('[\n]'), ''),
-                  textAlign: TextAlign.justify,
-                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                        fontSize: 16.0,
-                      ),
-                ),
-                const SizedBox(height: 16.0),
-                Text(
-                  'Directed by: ${film.director}',
-                  style: Theme.of(context).textTheme.caption,
-                ),
-                Text(
-                  'Created: ${film.created}',
-                  style: Theme.of(context).textTheme.caption,
-                ),
-                const SizedBox(height: 16.0),
-              ],
+      child: Padding(
+        padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            detailsHeaderWidget(context, film.title),
+            detailsSubheaderWidget(context,
+                'Episode ${film.episodeID} (${film.releaseDate.substring(0, 4)})'),
+            Text(film.openingCrawl.removeAllNewLines(),
+                textAlign: TextAlign.justify,
+                style: Theme.of(context).textTheme.bodyMedium),
+            Padding(
+              padding: const EdgeInsets.only(top: 16, bottom: 8),
+              child: Column(
+                children: [
+                  detailsRowWidget(context, "Directed by", film.director,
+                      textStyle: Theme.of(context).textTheme.bodySmall),
+                  detailsRowWidget(context, "Release date", film.releaseDate,
+                      textStyle: Theme.of(context).textTheme.bodySmall),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

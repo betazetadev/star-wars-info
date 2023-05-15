@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/view/film_details.dart';
 import '../graphql/film_query.dart';
 import '../model/film.dart';
@@ -56,7 +57,7 @@ class FilmList extends StatelessWidget {
                   style: const TextStyle(fontSize: 10),
                 ),
                 subtitle: Text(
-                  "${film.openingCrawl.substring(0, 80)}...",
+                  "${film.openingCrawl.removeAllNewLines().substring(0, 80)}...",
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   softWrap: true,

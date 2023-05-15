@@ -8,12 +8,8 @@ Widget detailsRowWidget(BuildContext context, String title, String value,
     crossAxisAlignment: CrossAxisAlignment.center,
     mainAxisSize: MainAxisSize.max,
     children: [
-      Text(title),
-      Text(
-        value,
-        style: textStyle,
-        textAlign: TextAlign.right
-      ),
+      Text(title, style: textStyle,),
+      Text(value, style: textStyle, textAlign: TextAlign.right),
     ],
   );
 }
