@@ -36,14 +36,38 @@ class FilmList extends StatelessWidget {
           itemBuilder: (context, index) {
             final Film film = Film.fromMap(films[index]);
 
-            return ListTile(
-              title: Text(film.title),
-              subtitle: Text('${film.releaseDate} - Episode ${film.episodeID}'),
-              onTap: () {
-                showDialog(
+            return Card(
+              elevation: 2,
+              margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: ListTile(
+                dense: true,
+                title: Text(film.title),
+                leading: SizedBox(
+                  width: 20,
+                  child: Center(
+                    child: Text("${film.episodeID}"),
+                  ),
+                ),
+                trailing: Text(
+                  film.director,
+                  style: const TextStyle(fontSize: 10),
+                ),
+                subtitle: Text(
+                  "${film.openingCrawl.substring(0, 80)}...",
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  softWrap: true,
+                ),
+                onTap: () {
+                  showDialog(
                     context: context,
-                    builder: (_) => FilmDetailsDialog(film: film));
-              },
+                    builder: (_) => FilmDetailsDialog(film: film),
+                  );
+                },
+              ),
             );
           },
         );
