@@ -32,45 +32,59 @@ class FilmList extends StatelessWidget {
           return const Text('No films');
         }
 
-        return ListView.builder(
-          itemCount: films.length,
-          itemBuilder: (context, index) {
-            final Film film = Film.fromMap(films[index]);
-
-            return Card(
-              elevation: 2,
-              margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(4),
+        return Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Image.network(
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Star_Wars_Yellow_Logo.svg/640px-Star_Wars_Yellow_Logo.svg.png',
+                // Add your desired properties for the image
               ),
-              child: ListTile(
-                dense: true,
-                title: Text(film.title),
-                leading: SizedBox(
-                  width: 20,
-                  child: Center(
-                    child: Text("${film.episodeID}"),
-                  ),
-                ),
-                trailing: Text(
-                  film.director,
-                  style: const TextStyle(fontSize: 10),
-                ),
-                subtitle: Text(
-                  "${film.openingCrawl.removeAllNewLines().substring(0, 80)}...",
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  softWrap: true,
-                ),
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (_) => FilmDetailsDialog(film: film),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: films.length,
+                itemBuilder: (context, index) {
+                  final Film film = Film.fromMap(films[index]);
+
+                  return Card(
+                    elevation: 2,
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: ListTile(
+                      dense: true,
+                      title: Text(film.title),
+                      leading: SizedBox(
+                        width: 20,
+                        child: Center(
+                          child: Text("${film.episodeID}"),
+                        ),
+                      ),
+                      trailing: Text(
+                        film.director,
+                        style: const TextStyle(fontSize: 10),
+                      ),
+                      subtitle: Text(
+                        "${film.openingCrawl.removeAllNewLines().substring(0, 80)}...",
+                        maxLines: 3,
+                        overflow: TextOverflow.ellipsis,
+                        softWrap: true,
+                      ),
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) => FilmDetailsDialog(film: film),
+                        );
+                      },
+                    ),
                   );
                 },
               ),
-            );
-          },
+            ),
+          ],
         );
       },
     );

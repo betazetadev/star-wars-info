@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/theme_data.dart';
 import 'package:star_wars/view/main_screen.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 
@@ -27,9 +28,7 @@ class MyApp extends StatelessWidget {
         client: client,
         child: MaterialApp(
           title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blueGrey,
-          ),
+          theme: yellowGrayBlackTheme,
           home: const MainScreen(),
         ));
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:star_wars/widget/starship_list.dart';
+import '../theme_data.dart';
 import '../widget/film_list.dart';
 import '../widget/people_list.dart';
 import '../widget/planet_list.dart';
@@ -44,9 +45,6 @@ class MainScreenState extends State<MainScreen> {
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.redAccent,
-        unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.blueGrey,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
