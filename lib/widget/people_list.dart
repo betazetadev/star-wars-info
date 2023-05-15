@@ -36,16 +36,32 @@ class PeopleList extends StatelessWidget {
           itemBuilder: (context, index) {
             final Person person = Person.fromMap(people[index]);
 
-            return ListTile(
-              title: Text(person.name),
-              subtitle:
-                  Text('Gender: ${person.gender}, Height: ${person.height}'),
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (_) => PeopleDetailsDialog(person: person));
-              },
-            );
+            return Card(
+                elevation: 2,
+                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: ListTile(
+                  title: Text(person.name),
+                  leading: SizedBox(
+                    width: 50,
+                    child: Center(
+                      child: Text(person.gender),
+                    ),
+                  ),
+                  subtitle: Text(
+                      'Birth year: ${person.birthYear}'),
+                  trailing: Text(
+                    "${person.height.toString()} cm",
+                    style: const TextStyle(fontSize: 10),
+                  ),
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (_) => PeopleDetailsDialog(person: person));
+                  },
+                ));
           },
         );
       },
