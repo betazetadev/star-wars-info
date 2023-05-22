@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:star_wars/view/list/starship_list.dart';
-import '../theme_data.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'list/film_list.dart';
 import 'list/people_list.dart';
 import 'list/planet_list.dart';
@@ -41,7 +41,7 @@ class MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Star Wars films'),
+        title: Text(AppLocalizations.of(context)?.appbar_title ?? 'Star Wars'),
       ),
       body: _tabs[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
