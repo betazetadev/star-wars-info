@@ -1,3 +1,13 @@
 {
-    "appbar_title": "Star Wars (ES)"
+    "appbar_title": "Star Wars (ES)",
+
+    "films": "Películas",
+
+    "people": "Personas",
+    "planets": "Planetas",
+
+    "species": "Especies",
+    "starships": "Naves espaciales",
+
+    "vehicles": "Vehículos"
 }

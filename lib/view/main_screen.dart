@@ -54,30 +54,30 @@ class MainScreenState extends State<MainScreen> {
             _currentIndex = index;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.movie),
-            label: 'Films',
+            icon: const Icon(Icons.movie),
+            label: AppLocalizations.of(context)?.films ?? 'Films',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people),
-            label: 'People',
+            icon: const Icon(Icons.people),
+            label: AppLocalizations.of(context)?.people ?? 'People',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.public),
-            label: 'Planets',
+            icon: const Icon(Icons.public),
+            label: AppLocalizations.of(context)?.planets ?? 'Planets',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.directions_car),
-            label: 'Vehicles',
+            icon: const Icon(Icons.directions_car),
+            label: AppLocalizations.of(context)?.vehicles ?? 'Vehicles',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.flight),
-            label: 'Starships',
+            icon: const Icon(Icons.flight),
+            label: AppLocalizations.of(context)?.starships ?? 'Starships',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.pets),
-            label: 'Species',
+            icon: const Icon(Icons.pets),
+            label: AppLocalizations.of(context)?.species ?? 'Species',
           ),
         ],
       ),
