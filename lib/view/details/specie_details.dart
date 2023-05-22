@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/widget/chip_list_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
 import '../../model/specie.dart';
 import '../../widget/details_header_widget.dart';
@@ -11,10 +12,6 @@ class SpecieDetailsDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String hairColors = "n/a";
-    if ((specie.hairColors?.length ?? 0) > 0) {
-      hairColors = specie.hairColors?.join(", ") ?? "n/a";
-    }
     return Dialog(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -30,11 +27,18 @@ class SpecieDetailsDialog extends StatelessWidget {
                 context, "Average Lifespan", "${specie.averageLifespan} years"),
             detailsRowWidget(context, "Designation", specie.designation),
             detailsRowWidget(context, "Language", specie.language),
-            detailsRowWidget(
-                context, "Eye Colors", specie.eyeColors?.join(", ") ?? "N/A"),
-            detailsRowWidget(context, "Hair Colors", hairColors),
-            detailsRowWidget(
-                context, "Skin Colors", specie.skinColors?.join(", ") ?? "N/A"),
+            chipListWidget(
+                context: context,
+                items: specie.eyeColors ?? [],
+                title: "Eye Colors"),
+            chipListWidget(
+                context: context,
+                items: specie.hairColors ?? [],
+                title: "Hair Colors"),
+            chipListWidget(
+                context: context,
+                items: specie.skinColors ?? [],
+                title: "Skin Colors"),
             const SizedBox(height: 16),
           ],
         ),

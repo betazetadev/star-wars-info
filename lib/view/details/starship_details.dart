@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/widget/chip_list_widget.dart';
 import '../../model/starship.dart';
 import '../../widget/details_header_widget.dart';
 import '../../widget/details_row_widget.dart';
@@ -22,21 +23,21 @@ class StarshipDetailsDialog extends StatelessWidget {
             detailsHeaderWidget(context, starship.name),
             detailsSubheaderWidget(context, starship.model),
             detailsRowWidget(context, "Class", starship.starshipClass),
-            detailsRowWidget(context, "Cost", "${starship.costInCredits} Galactic Credits"),
+            detailsRowWidget(
+                context, "Cost", "${starship.costInCredits} Galactic Credits"),
             detailsRowWidget(context, "Length", "${starship.length} meters"),
-            detailsRowWidget(context, "Cargo capacity", "${starship.cargoCapacity} kg"),
+            detailsRowWidget(
+                context, "Cargo capacity", "${starship.cargoCapacity} kg"),
             detailsRowWidget(context, "Consumables", starship.consumables),
             detailsRowWidget(context, "Crew", starship.crew),
             detailsRowWidget(context, "Passengers", starship.passengers),
-            detailsRowWidget(context, "Max atmosphering speed", starship.maxAtmospheringSpeed.toString()),
+            detailsRowWidget(context, "Max atmosphering speed",
+                starship.maxAtmospheringSpeed?.toString() ?? "n/a"),
             detailsRowWidget(context, "MGLT", starship.mglt.toString()),
-            const Text("Manufacturers"),
-            Wrap(
-              spacing: 8,
-              children: starship.manufacturers.map((manufacturer) {
-                return Chip(label: Text(manufacturer));
-              }).toList(),
-            ),
+            chipListWidget(
+                context: context,
+                items: starship.manufacturers,
+                title: "Manufacturers"),
             const SizedBox(height: 16),
           ],
         ),
