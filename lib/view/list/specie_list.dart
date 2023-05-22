@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/widget/list_row_widget.dart';
 import '../../graphql/specie_query.dart';
 import '../../model/specie.dart';
@@ -39,7 +40,7 @@ class SpecieList extends StatelessWidget {
             return ListRowWidget(
                 listTile: ListTile(
               title: Text(specie.name),
-              trailing: Text(specie.classification),
+              trailing: Text(specie.classification.upperCaseFirstLetter()),
               leading: SizedBox(
                 width: 50,
                 child: Center(

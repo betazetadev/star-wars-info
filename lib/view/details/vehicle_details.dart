@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/util/text_utils.dart';
+import 'package:star_wars/widget/chip_list_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
 import '../../model/vehicle.dart';
 import '../../widget/details_header_widget.dart';
@@ -20,7 +22,7 @@ class VehicleDetailsDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             detailsHeaderWidget(context, vehicle.name),
-            detailsSubheaderWidget(context, vehicle.vehicleClass),
+            detailsSubheaderWidget(context, vehicle.vehicleClass.upperCaseFirstLetter()),
             detailsRowWidget(context, "Cost", vehicle.costInCredits.toString()),
             detailsRowWidget(context, "Length", "${vehicle.length} meters"),
             detailsRowWidget(
@@ -30,13 +32,10 @@ class VehicleDetailsDialog extends StatelessWidget {
             detailsRowWidget(context, "Passengers", vehicle.passengers),
             detailsRowWidget(context, "Max atmosphering speed",
                 vehicle.maxAtmospheringSpeed.toString()),
-            const Text("Manufacturers"),
-            Wrap(
-              spacing: 8,
-              children: vehicle.manufacturers.map((manufacturer) {
-                return Chip(label: Text(manufacturer));
-              }).toList(),
-            ),
+            chipListWidget(
+                context: context,
+                items: vehicle.manufacturers,
+                title: "Manufacturers"),
             const SizedBox(height: 16),
           ],
         ),

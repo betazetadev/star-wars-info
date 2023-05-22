@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:star_wars/graphql/vehicle_query.dart';
+import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/widget/list_row_widget.dart';
 import '../../model/vehicle.dart';
 import '../details/vehicle_details.dart';
@@ -65,7 +66,7 @@ class VehicleList extends StatelessWidget {
                 ),
               ),
               trailing: Text(
-                vehicle.vehicleClass,
+                vehicle.vehicleClass.upperCaseFirstLetter(),
                 style: const TextStyle(fontSize: 10),
               ),
               subtitle: Text(vehicle.model),

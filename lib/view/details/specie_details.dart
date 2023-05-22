@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/widget/chip_list_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
 import '../../model/specie.dart';
@@ -20,7 +21,8 @@ class SpecieDetailsDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             detailsHeaderWidget(context, specie.name),
-            detailsSubheaderWidget(context, specie.classification),
+            detailsSubheaderWidget(
+                context, specie.classification.upperCaseFirstLetter()),
             detailsRowWidget(
                 context, "Average Height", specie.averageHeight.toString()),
             detailsRowWidget(

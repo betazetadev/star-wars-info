@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/widget/chip_list_widget.dart';
 import 'package:star_wars/widget/details_header_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
 import '../../model/planet.dart';
@@ -19,27 +20,18 @@ class PlanetDetailsDialog extends StatelessWidget {
           children: [
             detailsHeaderWidget(context, planet.name),
             detailsRowWidget(context, "Diameter", "${planet.diameter} km"),
-            detailsRowWidget(context, "Gravity", planet.gravity.replaceAll(',', '\n')),
+            detailsRowWidget(
+                context, "Gravity", planet.gravity.replaceAll(',', '\n')),
             detailsRowWidget(
                 context, "Orbital period", planet.orbitalPeriod.toString()),
             detailsRowWidget(
                 context, "Rotation period", "${planet.rotationPeriod} hours"),
             detailsRowWidget(
                 context, "Surface water", "${planet.surfaceWater}%"),
-            const Text("Climates:"),
-            Wrap(
-              spacing: 8,
-              children: planet.climates.map((climate) {
-                return Chip(label: Text(climate));
-              }).toList(),
-            ),
-            const Text("Terrains:"),
-            Wrap(
-              spacing: 8,
-              children: planet.terrains.map((terrain) {
-                return Chip(label: Text(terrain));
-              }).toList(),
-            ),
+            chipListWidget(
+                context: context, items: planet.climates, title: "Climates"),
+            chipListWidget(
+                context: context, items: planet.terrains, title: "Terrains"),
             const SizedBox(height: 16),
           ],
         ),
