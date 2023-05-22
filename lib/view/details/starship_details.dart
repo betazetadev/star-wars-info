@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../model/starship.dart';
-import '../widget/details_header_widget.dart';
-import '../widget/details_row_widget.dart';
-import '../widget/details_subheader_widget.dart';
+import '../../model/starship.dart';
+import '../../widget/details_header_widget.dart';
+import '../../widget/details_row_widget.dart';
+import '../../widget/details_subheader_widget.dart';
 
 class StarshipDetailsDialog extends StatelessWidget {
   final Starship starship;

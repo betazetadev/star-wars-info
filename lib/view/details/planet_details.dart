@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:star_wars/widget/details_header_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
-import '../model/planet.dart';
+import '../../model/planet.dart';
 
 class PlanetDetailsDialog extends StatelessWidget {
   final Planet planet;

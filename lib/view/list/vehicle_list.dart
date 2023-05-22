@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:star_wars/graphql/vehicle_query.dart';
-import '../model/vehicle.dart';
-import '../view/vehicle_details.dart';
+import 'package:star_wars/widget/list_row_widget.dart';
+import '../../model/vehicle.dart';
+import '../details/vehicle_details.dart';
 
 class VehicleList extends StatelessWidget {
   const VehicleList({super.key, required this.title});
@@ -35,17 +36,45 @@ class VehicleList extends StatelessWidget {
           itemCount: vehicles.length,
           itemBuilder: (context, index) {
             final Vehicle vehicle = Vehicle.fromMap(vehicles[index]);
-            return ListTile(
+            return ListRowWidget(
+                listTile: ListTile(
               title: Text(vehicle.name),
-              subtitle: Text(
-                "Model: ${vehicle.model}\nClass: ${vehicle.vehicleClass}\nCrew: ${vehicle.crew}\nPassengers: ${vehicle.passengers}",
+              leading: SizedBox(
+                width: 80, // Set the width to 80 pixels
+                child: Center(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          const Icon(Icons.person_pin_outlined),
+                          const SizedBox(width: 4),
+                          Text(vehicle.crew),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          const Icon(Icons.person),
+                          const SizedBox(width: 4),
+                          Text(vehicle.passengers != "unknown"
+                              ? vehicle.passengers
+                              : "n/a"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
+              trailing: Text(
+                vehicle.vehicleClass,
+                style: const TextStyle(fontSize: 10),
+              ),
+              subtitle: Text(vehicle.model),
               onTap: () {
                 showDialog(
                     context: context,
                     builder: (_) => VehicleDetailsDialog(vehicle: vehicle));
               },
-            );
+            ));
           },
         );
       },

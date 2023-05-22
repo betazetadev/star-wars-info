@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:star_wars/widget/starship_list.dart';
+import 'package:star_wars/view/list/starship_list.dart';
 import '../theme_data.dart';
-import '../widget/film_list.dart';
-import '../widget/people_list.dart';
-import '../widget/planet_list.dart';
-import '../widget/specie_list.dart';
-import '../widget/vehicle_list.dart';
+import 'list/film_list.dart';
+import 'list/people_list.dart';
+import 'list/planet_list.dart';
+import 'list/specie_list.dart';
+import 'list/vehicle_list.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

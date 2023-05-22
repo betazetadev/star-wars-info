@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
     return GraphQLProvider(
         client: client,
         child: MaterialApp(
-          title: 'Flutter Demo',
+          title: 'Star Wars',
           theme: yellowGrayBlackTheme,
           home: const MainScreen(),
         ));

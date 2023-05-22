@@ -3,7 +3,7 @@ import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/widget/details_header_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
 import 'package:star_wars/widget/details_subheader_widget.dart';
-import '../model/film.dart';
+import '../../model/film.dart';
 
 class FilmDetailsDialog extends StatelessWidget {
   final Film film;

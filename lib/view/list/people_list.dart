@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:star_wars/graphql/person_query.dart';
-import '../model/person.dart';
-import '../view/people_details.dart';
+import 'package:star_wars/widget/list_row_widget.dart';
+import '../../model/person.dart';
+import '../details/people_details.dart';
 
 class PeopleList extends StatelessWidget {
   const PeopleList({super.key, required this.title});
@@ -35,33 +36,26 @@ class PeopleList extends StatelessWidget {
           itemCount: people.length,
           itemBuilder: (context, index) {
             final Person person = Person.fromMap(people[index]);
-
-            return Card(
-                elevation: 2,
-                margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(4),
+            return ListRowWidget(
+                listTile: ListTile(
+              title: Text(person.name),
+              leading: SizedBox(
+                width: 50,
+                child: Center(
+                  child: Text(person.gender),
                 ),
-                child: ListTile(
-                  title: Text(person.name),
-                  leading: SizedBox(
-                    width: 50,
-                    child: Center(
-                      child: Text(person.gender),
-                    ),
-                  ),
-                  subtitle: Text(
-                      'Birth year: ${person.birthYear}'),
-                  trailing: Text(
-                    "${person.height.toString()} cm",
-                    style: const TextStyle(fontSize: 10),
-                  ),
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (_) => PeopleDetailsDialog(person: person));
-                  },
-                ));
+              ),
+              subtitle: Text('Birth year: ${person.birthYear}'),
+              trailing: Text(
+                "${person.height.toString()} cm",
+                style: const TextStyle(fontSize: 10),
+              ),
+              onTap: () {
+                showDialog(
+                    context: context,
+                    builder: (_) => PeopleDetailsDialog(person: person));
+              },
+            ));
           },
         );
       },

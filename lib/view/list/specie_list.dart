@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
-import 'package:star_wars/graphql/vehicle_query.dart';
-import '../graphql/specie_query.dart';
-import '../model/specie.dart';
-import '../model/vehicle.dart';
-import '../view/specie_details.dart';
-import '../view/vehicle_details.dart';
+import 'package:star_wars/widget/list_row_widget.dart';
+import '../../graphql/specie_query.dart';
+import '../../model/specie.dart';
+import '../details/specie_details.dart';
 
 class SpecieList extends StatelessWidget {
   const SpecieList({super.key, required this.title});
@@ -38,12 +36,14 @@ class SpecieList extends StatelessWidget {
           itemCount: species.length,
           itemBuilder: (context, index) {
             final Specie specie = Specie.fromMap(species[index]);
-            return ListTile(
+            return ListRowWidget(
+                listTile: ListTile(
               title: Text(specie.name),
+              trailing: Text(specie.classification),
               leading: SizedBox(
-                width: 80, // Set the width to 80 pixels
+                width: 50,
                 child: Center(
-                  child: Text(specie.classification),
+                  child: Text("${specie.averageHeight.toInt().toString()} cm"),
                 ),
               ),
               subtitle: Text(
@@ -54,7 +54,7 @@ class SpecieList extends StatelessWidget {
                     context: context,
                     builder: (_) => SpecieDetailsDialog(specie: specie));
               },
-            );
+            ));
           },
         );
       },

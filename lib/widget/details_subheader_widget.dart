@@ -11,7 +11,7 @@ Widget detailsSubheaderWidget(BuildContext context, String title) {
             child: Text(
               title,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                    color: Theme.of(context).primaryColorLight,
+                    color: Theme.of(context).primaryColorDark,
                   ),
             ),
           ),

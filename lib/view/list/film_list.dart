@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:star_wars/util/text_utils.dart';
-import 'package:star_wars/view/film_details.dart';
-import '../graphql/film_query.dart';
-import '../model/film.dart';
+import 'package:star_wars/view/details/film_details.dart';
+import 'package:star_wars/widget/list_row_widget.dart';
+import '../../graphql/film_query.dart';
+import '../../model/film.dart';
 
 class FilmList extends StatelessWidget {
   const FilmList({super.key, required this.title});
@@ -47,40 +48,33 @@ class FilmList extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final Film film = Film.fromMap(films[index]);
 
-                  return Card(
-                    elevation: 2,
-                    margin:
-                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
+                  return ListRowWidget(
+                      listTile: ListTile(
+                    dense: true,
+                    title: Text(film.title),
+                    leading: SizedBox(
+                      width: 20,
+                      child: Center(
+                        child: Text("${film.episodeID}"),
+                      ),
                     ),
-                    child: ListTile(
-                      dense: true,
-                      title: Text(film.title),
-                      leading: SizedBox(
-                        width: 20,
-                        child: Center(
-                          child: Text("${film.episodeID}"),
-                        ),
-                      ),
-                      trailing: Text(
-                        film.director,
-                        style: const TextStyle(fontSize: 10),
-                      ),
-                      subtitle: Text(
-                        "${film.openingCrawl.removeAllNewLines().substring(0, 80)}...",
-                        maxLines: 3,
-                        overflow: TextOverflow.ellipsis,
-                        softWrap: true,
-                      ),
-                      onTap: () {
-                        showDialog(
-                          context: context,
-                          builder: (_) => FilmDetailsDialog(film: film),
-                        );
-                      },
+                    trailing: Text(
+                      film.director,
+                      style: const TextStyle(fontSize: 10),
                     ),
-                  );
+                    subtitle: Text(
+                      "${film.openingCrawl.removeAllNewLines().substring(0, 80)}...",
+                      maxLines: 3,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                    ),
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (_) => FilmDetailsDialog(film: film),
+                      );
+                    },
+                  ));
                 },
               ),
             ),
