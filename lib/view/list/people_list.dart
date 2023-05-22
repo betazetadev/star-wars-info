@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:star_wars/graphql/person_query.dart';
+import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/widget/list_row_widget.dart';
 import '../../model/person.dart';
 import '../details/people_details.dart';
@@ -42,7 +43,7 @@ class PeopleList extends StatelessWidget {
               leading: SizedBox(
                 width: 50,
                 child: Center(
-                  child: Text(person.gender),
+                  child: Text(person.gender.upperCaseFirstLetter()),
                 ),
               ),
               subtitle: Text('Birth year: ${person.birthYear}'),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:star_wars/util/text_utils.dart';
 import 'package:star_wars/widget/chip_list_widget.dart';
 import 'package:star_wars/widget/details_header_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
+import 'package:star_wars/widget/details_subheader_widget.dart';
 import '../../model/planet.dart';
 
 class PlanetDetailsDialog extends StatelessWidget {
@@ -19,7 +21,7 @@ class PlanetDetailsDialog extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             detailsHeaderWidget(context, planet.name),
-            detailsRowWidget(context, "Diameter", "${planet.diameter} km"),
+            detailsSubheaderWidget(context, "${planet.diameter} km"),
             detailsRowWidget(
                 context, "Gravity", planet.gravity.replaceAll(',', '\n')),
             detailsRowWidget(
