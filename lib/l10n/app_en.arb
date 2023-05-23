@@ -1,6 +1,10 @@
 {
     "appbar_title": "Star Wars (EN)",
 
+    "birth_year": "Birth year",
+
+    "eye_color": "Eye color",
+
     "film_episode_date_text": "Episode {episodeId}, released on {episodeReleaseDate}",
     "@film_episode_date_text": {
       "description": "Episode ID and release date",
@@ -18,6 +22,8 @@
     "film_director_title": "Directed by",
     "film_release_date_title": "Release date",
     "films": "Films",
+
+    "height": "Height",
 
     "not_available": "n/a",
 

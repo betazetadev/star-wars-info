@@ -1,6 +1,10 @@
 {
     "appbar_title": "Star Wars (ES)",
 
+    "birth_year": "Año de nacimiento",
+
+    "eye_color": "Color de ojos",
+
     "film_episode_date_text": "Episodio {episodeId}, estrenado en {episodeReleaseDate}",
     "@film_episode_date_text": {
       "description": "ID del episodio y fecha de lanzamiento",
@@ -18,6 +22,8 @@
     "film_director_title": "Dirigida por",
     "film_release_date_title": "Fecha de estreno",
     "films": "Películas",
+
+    "height": "Altura",
 
     "not_available": "n/d",
 

@@ -4,6 +4,7 @@ import 'package:star_wars/widget/details_header_widget.dart';
 import 'package:star_wars/widget/details_subheader_widget.dart';
 import '../../model/person.dart';
 import '../../widget/details_row_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class PeopleDetailsDialog extends StatelessWidget {
   final Person person;
@@ -21,9 +22,21 @@ class PeopleDetailsDialog extends StatelessWidget {
             detailsHeaderWidget(context, person.name),
             detailsSubheaderWidget(
                 context, person.gender.upperCaseFirstLetter()),
-            detailsRowWidget(context, 'Height', person.height.toString()),
-            detailsRowWidget(context, 'Birth Year', person.birthYear),
-            detailsRowWidget(context, 'Eye Color', person.eyeColor),
+            detailsRowWidget(
+                context,
+                AppLocalizations.of(context)?.height ??
+                    AppLocalizations.of(context)!.not_available,
+                person.height.toString()),
+            detailsRowWidget(
+                context,
+                AppLocalizations.of(context)?.birth_year ??
+                    AppLocalizations.of(context)!.not_available,
+                person.birthYear),
+            detailsRowWidget(
+                context,
+                AppLocalizations.of(context)?.eye_color ??
+                    AppLocalizations.of(context)!.not_available,
+                person.eyeColor),
             const SizedBox(height: 16.0),
           ],
         ),
