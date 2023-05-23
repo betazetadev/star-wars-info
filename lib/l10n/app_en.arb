@@ -51,6 +51,7 @@
 
     "language": "Language",
     "length": "Length",
+    "loading": "Loading...",
 
     "manufacturers": "Manufacturers",
     "max_atmosphering_speed": "Max atmosphering speed",

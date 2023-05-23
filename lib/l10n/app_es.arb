@@ -51,6 +51,7 @@
 
     "language": "Idioma",
     "length": "Longitud",
+    "loading": "Cargando...",
 
     "manufacturers": "Fabricantes",
     "max_atmosphering_speed": "Velocidad máxima atmosférica",

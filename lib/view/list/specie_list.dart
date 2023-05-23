@@ -7,9 +7,7 @@ import '../../model/specie.dart';
 import '../details/specie_details.dart';
 
 class SpecieList extends StatelessWidget {
-  const SpecieList({super.key, required this.title});
-
-  final String title;
+  const SpecieList({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -6,9 +6,7 @@ import '../../model/planet.dart';
 import '../details/planet_details.dart';
 
 class PlanetList extends StatelessWidget {
-  const PlanetList({super.key, required this.title});
-
-  final String title;
+  const PlanetList({super.key});
 
   @override
   Widget build(BuildContext context) {

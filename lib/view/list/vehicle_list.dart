@@ -7,9 +7,7 @@ import '../../model/vehicle.dart';
 import '../details/vehicle_details.dart';
 
 class VehicleList extends StatelessWidget {
-  const VehicleList({super.key, required this.title});
-
-  final String title;
+  const VehicleList({super.key});
 
   @override
   Widget build(BuildContext context) {

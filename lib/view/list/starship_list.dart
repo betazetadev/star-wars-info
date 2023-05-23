@@ -6,9 +6,7 @@ import '../../model/starship.dart';
 import '../details/starship_details.dart';
 
 class StarshipList extends StatelessWidget {
-  const StarshipList({super.key, required this.title});
-
-  final String title;
+  const StarshipList({super.key});
 
   @override
   Widget build(BuildContext context) {

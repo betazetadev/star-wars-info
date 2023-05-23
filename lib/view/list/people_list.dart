@@ -7,9 +7,7 @@ import '../../model/person.dart';
 import '../details/people_details.dart';
 
 class PeopleList extends StatelessWidget {
-  const PeopleList({super.key, required this.title});
-
-  final String title;
+  const PeopleList({super.key});
 
   @override
   Widget build(BuildContext context) {

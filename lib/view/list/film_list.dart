@@ -5,11 +5,10 @@ import 'package:star_wars/view/details/film_details.dart';
 import 'package:star_wars/widget/list_row_widget.dart';
 import '../../graphql/film_query.dart';
 import '../../model/film.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FilmList extends StatelessWidget {
-  const FilmList({super.key, required this.title});
-
-  final String title;
+  const FilmList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +23,7 @@ class FilmList extends StatelessWidget {
         }
 
         if (result.isLoading) {
-          return const Text('Loading');
+          return Text(AppLocalizations.of(context)!.loading);
         }
 
         List? films = result.data?['allFilms']?['films'];
