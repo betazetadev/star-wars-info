@@ -3,7 +3,11 @@
 
     "birth_year": "Año de nacimiento",
 
+    "cargo_capacity": "Capacidad de carga",
     "climates": "Climas",
+    "consumables": "Consumibles",
+    "cost": "Coste",
+    "crew": "Tripulación",
 
     "eye_color": "Color de ojos",
 
@@ -29,10 +33,16 @@
 
     "height": "Altura",
 
+    "length": "Longitud",
+
+    "manufacturers": "Fabricantes",
+    "max_atmosphering_speed": "Velocidad máxima atmosférica",
+
     "not_available": "n/d",
 
     "orbital_period": "Periodo orbital",
 
+    "passengers": "Pasajeros",
     "people": "Personas",
     "planet_diameter_text": "Diametro: {diameter} km",
     "@planet_diameter_text": {
