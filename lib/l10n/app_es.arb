@@ -1,5 +1,17 @@
 {
     "appbar_title": "Star Wars (ES)",
+    "average_height": "Altura media",
+    "average_lifespan": "Esperanza de vida media",
+    "average_lifespan_text": "{lifespan} años",
+    "@average_lifespan_text": {
+      "description": "Esperanza de vida media (en años)",
+      "placeholders": {
+        "lifespan": {
+          "type": "num",
+          "example": "100 años"
+        }
+      }
+    },
 
     "birth_year": "Año de nacimiento",
 
@@ -9,7 +21,10 @@
     "cost": "Coste",
     "crew": "Tripulación",
 
+    "designation": "Designación",
+
     "eye_color": "Color de ojos",
+    "eye_colors": "Colores de ojos",
 
     "film_episode_date_text": "Episodio {episodeId}, estrenado en {episodeReleaseDate}",
     "@film_episode_date_text": {
@@ -31,8 +46,10 @@
 
     "gravity": "Gravity",
 
+    "hair_colors": "Colores de pelo",
     "height": "Altura",
 
+    "language": "Idioma",
     "length": "Longitud",
 
     "manufacturers": "Fabricantes",
@@ -68,6 +85,7 @@
 
     "rotation_period": "Periodo de rotación",
 
+    "skin_colors": "Colores de piel",
     "species": "Especies",
     "starship_class": "Clase",
     "starship_cost_text": "{cost} Créditos Intergalácticos",

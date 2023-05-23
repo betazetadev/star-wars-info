@@ -5,6 +5,7 @@ import 'package:star_wars/widget/details_row_widget.dart';
 import '../../model/specie.dart';
 import '../../widget/details_header_widget.dart';
 import '../../widget/details_subheader_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SpecieDetailsDialog extends StatelessWidget {
   final Specie specie;
@@ -24,23 +25,30 @@ class SpecieDetailsDialog extends StatelessWidget {
             detailsSubheaderWidget(
                 context, specie.classification.upperCaseFirstLetter()),
             detailsRowWidget(
-                context, "Average Height", specie.averageHeight.toString()),
+                context,
+                AppLocalizations.of(context)!.average_height,
+                specie.averageHeight.toString()),
             detailsRowWidget(
-                context, "Average Lifespan", "${specie.averageLifespan} years"),
-            detailsRowWidget(context, "Designation", specie.designation),
-            detailsRowWidget(context, "Language", specie.language),
+                context,
+                AppLocalizations.of(context)!.average_lifespan,
+                AppLocalizations.of(context)!
+                    .average_lifespan_text(specie.averageLifespan)),
+            detailsRowWidget(context, AppLocalizations.of(context)!.designation,
+                specie.designation),
+            detailsRowWidget(context, AppLocalizations.of(context)!.language,
+                specie.language),
             chipListWidget(
                 context: context,
                 items: specie.eyeColors ?? [],
-                title: "Eye Colors"),
+                title: AppLocalizations.of(context)!.eye_colors),
             chipListWidget(
                 context: context,
                 items: specie.hairColors ?? [],
-                title: "Hair Colors"),
+                title: AppLocalizations.of(context)!.hair_colors),
             chipListWidget(
                 context: context,
                 items: specie.skinColors ?? [],
-                title: "Skin Colors"),
+                title: AppLocalizations.of(context)!.skin_colors),
             const SizedBox(height: 16),
           ],
         ),

@@ -1,5 +1,17 @@
 {
     "appbar_title": "Star Wars (EN)",
+    "average_height": "Average height",
+    "average_lifespan": "Average lifespan",
+    "average_lifespan_text": "{lifespan} years",
+    "@average_lifespan_text": {
+      "description": "Average lifespan (in years)",
+      "placeholders": {
+        "lifespan": {
+          "type": "num",
+          "example": "100 years"
+        }
+      }
+    },
 
     "birth_year": "Birth year",
 
@@ -9,7 +21,10 @@
     "cost": "Cost",
     "crew": "Crew",
 
+    "designation": "Designation",
+
     "eye_color": "Eye color",
+    "eye_colors": "Eye colors",
 
     "film_episode_date_text": "Episode {episodeId}, released on {episodeReleaseDate}",
     "@film_episode_date_text": {
@@ -31,8 +46,10 @@
 
     "gravity": "Gravity",
 
+    "hair_colors": "Hair colors",
     "height": "Height",
 
+    "language": "Language",
     "length": "Length",
 
     "manufacturers": "Manufacturers",
@@ -68,6 +85,7 @@
 
     "rotation_period": "Rotation period",
 
+    "skin_colors": "Skin colors",
     "species": "Species",
     "starship_class": "Class",
     "starship_cost_text": "{cost} Galactic Credits",
