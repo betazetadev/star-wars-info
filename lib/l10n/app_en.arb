@@ -69,6 +69,17 @@
     "rotation_period": "Rotation period",
 
     "species": "Species",
+    "starship_class": "Class",
+    "starship_cost_text": "{cost} Galactic Credits",
+    "@starship_cost_text": {
+      "description": "Starship cost (in Galactic Credits)",
+      "placeholders": {
+        "cost": {
+          "type": "num",
+          "example": "1000000 Galactic Credits"
+        }
+      }
+    },
     "starships": "Starships",
     "surface_water": "Surface water",
 

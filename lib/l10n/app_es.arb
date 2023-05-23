@@ -5,7 +5,7 @@
 
     "cargo_capacity": "Capacidad de carga",
     "climates": "Climas",
-    "consumables": "Consumibles",
+    "consumables": "Reservas",
     "cost": "Coste",
     "crew": "Tripulación",
 
@@ -69,6 +69,17 @@
     "rotation_period": "Periodo de rotación",
 
     "species": "Especies",
+    "starship_class": "Clase",
+    "starship_cost_text": "{cost} Créditos Intergalácticos",
+    "@starship_cost_text": {
+      "description": "Coste de la nave (en Créditos Intergalácticos)",
+      "placeholders": {
+        "cost": {
+          "type": "num",
+          "example": "1000000 Créditos Intergalácticos"
+        }
+      }
+    },
     "starships": "Naves",
     "surface_water": "Agua en la superficie",
 
