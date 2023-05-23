@@ -4,6 +4,7 @@ import 'package:star_wars/widget/details_header_widget.dart';
 import 'package:star_wars/widget/details_row_widget.dart';
 import 'package:star_wars/widget/details_subheader_widget.dart';
 import '../../model/film.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class FilmDetailsDialog extends StatelessWidget {
   final Film film;
@@ -23,8 +24,11 @@ class FilmDetailsDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             detailsHeaderWidget(context, film.title),
-            detailsSubheaderWidget(context,
-                'Episode ${film.episodeID} (${film.releaseDate.substring(0, 4)})'),
+            detailsSubheaderWidget(
+                context,
+                AppLocalizations.of(context)?.film_episode_date_text(
+                        film.episodeID, film.releaseDate.substring(0, 4)) ??
+                    AppLocalizations.of(context)!.not_available),
             Text(film.openingCrawl.removeAllNewLines(),
                 textAlign: TextAlign.justify,
                 style: Theme.of(context).textTheme.bodyMedium),
@@ -32,9 +36,17 @@ class FilmDetailsDialog extends StatelessWidget {
               padding: const EdgeInsets.only(top: 16, bottom: 8),
               child: Column(
                 children: [
-                  detailsRowWidget(context, "Directed by", film.director,
+                  detailsRowWidget(
+                      context,
+                      AppLocalizations.of(context)?.film_director_title ??
+                          AppLocalizations.of(context)!.not_available,
+                      film.director,
                       textStyle: Theme.of(context).textTheme.bodySmall),
-                  detailsRowWidget(context, "Release date", film.releaseDate,
+                  detailsRowWidget(
+                      context,
+                      AppLocalizations.of(context)?.film_release_date_title ??
+                          AppLocalizations.of(context)!.not_available,
+                      film.releaseDate,
                       textStyle: Theme.of(context).textTheme.bodySmall),
                 ],
               ),

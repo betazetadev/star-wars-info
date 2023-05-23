@@ -1,7 +1,25 @@
 {
     "appbar_title": "Star Wars (ES)",
 
+    "film_episode_date_text": "Episodio {episodeId}, estrenado en {episodeReleaseDate}",
+    "@film_episode_date_text": {
+      "description": "ID del episodio y fecha de lanzamiento",
+      "placeholders": {
+        "episodeId": {
+          "type": "num",
+          "example": "1"
+        },
+        "episodeReleaseDate": {
+          "type": "String",
+          "example": "1999-05-19"
+        }
+      }
+    },
+    "film_director_title": "Dirigida por",
+    "film_release_date_title": "Fecha de estreno",
     "films": "Películas",
+
+    "not_available": "n/d",
 
     "people": "Personas",
     "planets": "Planetas",
