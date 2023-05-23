@@ -26,9 +26,8 @@ class FilmDetailsDialog extends StatelessWidget {
             detailsHeaderWidget(context, film.title),
             detailsSubheaderWidget(
                 context,
-                AppLocalizations.of(context)?.film_episode_date_text(
-                        film.episodeID, film.releaseDate.substring(0, 4)) ??
-                    AppLocalizations.of(context)!.not_available),
+                AppLocalizations.of(context)!.film_episode_date_text(
+                    film.episodeID, film.releaseDate.substring(0, 4))),
             Text(film.openingCrawl.removeAllNewLines(),
                 textAlign: TextAlign.justify,
                 style: Theme.of(context).textTheme.bodyMedium),
@@ -38,14 +37,12 @@ class FilmDetailsDialog extends StatelessWidget {
                 children: [
                   detailsRowWidget(
                       context,
-                      AppLocalizations.of(context)?.film_director_title ??
-                          AppLocalizations.of(context)!.not_available,
+                      AppLocalizations.of(context)!.film_director_title,
                       film.director,
                       textStyle: Theme.of(context).textTheme.bodySmall),
                   detailsRowWidget(
                       context,
-                      AppLocalizations.of(context)?.film_release_date_title ??
-                          AppLocalizations.of(context)!.not_available,
+                      AppLocalizations.of(context)!.film_release_date_title,
                       film.releaseDate,
                       textStyle: Theme.of(context).textTheme.bodySmall),
                 ],

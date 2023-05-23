@@ -23,41 +23,31 @@ class PlanetDetailsDialog extends StatelessWidget {
             detailsHeaderWidget(context, planet.name),
             detailsSubheaderWidget(
                 context,
-                AppLocalizations.of(context)
-                        ?.planet_diameter_text(planet.diameter ?? 0) ??
-                    AppLocalizations.of(context)!.not_available),
-            detailsRowWidget(
-                context,
-                AppLocalizations.of(context)?.gravity ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!
+                    .planet_diameter_text(planet.diameter ?? 0)),
+            detailsRowWidget(context, AppLocalizations.of(context)!.gravity,
                 planet.gravity.replaceAll(',', '\n')),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.orbital_period ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.orbital_period,
                 planet.orbitalPeriod.toString()),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.rotation_period ??
-                    AppLocalizations.of(context)!.not_available,
-                AppLocalizations.of(context)?.planet_rotation_period_text(
-                        planet.rotationPeriod ?? 0) ??
-                    AppLocalizations.of(context)!.not_available),
+                AppLocalizations.of(context)!.rotation_period,
+                AppLocalizations.of(context)!
+                    .planet_rotation_period_text(planet.rotationPeriod ?? 0)),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.surface_water ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.surface_water,
                 "${planet.surfaceWater}%"),
             chipListWidget(
                 context: context,
                 items: planet.climates,
-                title: AppLocalizations.of(context)?.climates ??
-                    AppLocalizations.of(context)!.not_available),
+                title: AppLocalizations.of(context)!.climates),
             chipListWidget(
                 context: context,
                 items: planet.terrains,
-                title: AppLocalizations.of(context)?.terrains ??
-                    AppLocalizations.of(context)!.not_available),
+                title: AppLocalizations.of(context)!.terrains),
             const SizedBox(height: 16),
           ],
         ),

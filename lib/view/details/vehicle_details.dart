@@ -27,44 +27,36 @@ class VehicleDetailsDialog extends StatelessWidget {
                 context, vehicle.vehicleClass.upperCaseFirstLetter()),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.cost ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.cost,
                 vehicle.costInCredits.toString()),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.length ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.length,
                 "${vehicle.length}m"),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.cargo_capacity ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.cargo_capacity,
                 "${vehicle.cargoCapacity}kg"),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.consumables ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.consumables,
                 vehicle.consumables),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.crew ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.crew,
                 vehicle.crew),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.passengers ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.passengers,
                 vehicle.passengers),
             detailsRowWidget(
                 context,
-                AppLocalizations.of(context)?.max_atmosphering_speed ??
-                    AppLocalizations.of(context)!.not_available,
+                AppLocalizations.of(context)!.max_atmosphering_speed,
                 vehicle.maxAtmospheringSpeed.toString()),
             chipListWidget(
                 context: context,
                 items: vehicle.manufacturers,
-                title: AppLocalizations.of(context)?.manufacturers ??
-                    AppLocalizations.of(context)!.not_available),
+                title: AppLocalizations.of(context)!.manufacturers),
             const SizedBox(height: 16),
           ],
         ),

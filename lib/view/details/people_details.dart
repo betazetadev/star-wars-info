@@ -22,20 +22,11 @@ class PeopleDetailsDialog extends StatelessWidget {
             detailsHeaderWidget(context, person.name),
             detailsSubheaderWidget(
                 context, person.gender.upperCaseFirstLetter()),
-            detailsRowWidget(
-                context,
-                AppLocalizations.of(context)?.height ??
-                    AppLocalizations.of(context)!.not_available,
+            detailsRowWidget(context, AppLocalizations.of(context)!.height,
                 person.height.toString()),
-            detailsRowWidget(
-                context,
-                AppLocalizations.of(context)?.birth_year ??
-                    AppLocalizations.of(context)!.not_available,
+            detailsRowWidget(context, AppLocalizations.of(context)!.birth_year,
                 person.birthYear),
-            detailsRowWidget(
-                context,
-                AppLocalizations.of(context)?.eye_color ??
-                    AppLocalizations.of(context)!.not_available,
+            detailsRowWidget(context, AppLocalizations.of(context)!.eye_color,
                 person.eyeColor),
             const SizedBox(height: 16.0),
           ],
