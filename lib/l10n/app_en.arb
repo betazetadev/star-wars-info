@@ -3,6 +3,8 @@
 
     "birth_year": "Birth year",
 
+    "climates": "Climates",
+
     "eye_color": "Eye color",
 
     "film_episode_date_text": "Episode {episodeId}, released on {episodeReleaseDate}",
@@ -23,15 +25,44 @@
     "film_release_date_title": "Release date",
     "films": "Films",
 
+    "gravity": "Gravity",
+
     "height": "Height",
 
     "not_available": "n/a",
 
+    "orbital_period": "Orbital period",
+
     "people": "People",
+    "planet_diameter_text": "Diameter: {diameter} km",
+    "@planet_diameter_text": {
+      "description": "Planet diameter (km)",
+      "placeholders": {
+        "diameter": {
+          "type": "num",
+          "example": "Diameter: 10200 km"
+        }
+      }
+    },
+    "planet_rotation_period_text": "{rotation} hours",
+    "@planet_rotation_period_text": {
+      "description": "Planet rotation time (in hours)",
+      "placeholders": {
+        "rotation": {
+          "type": "num",
+          "example": "1 hours"
+        }
+      }
+    },
     "planets": "Planets",
+
+    "rotation_period": "Rotation period",
 
     "species": "Species",
     "starships": "Starships",
+    "surface_water": "Surface water",
+
+    "terrains": "Terrains",
 
     "vehicles": "Vehicles"
 }
