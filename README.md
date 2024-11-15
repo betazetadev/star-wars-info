@@ -32,5 +32,3 @@ submit a pull request.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-[<img src="bmc_qr.png">](https://www.buymeacoffee.com/betazetadev "Buy me a coffee if you liked it")
